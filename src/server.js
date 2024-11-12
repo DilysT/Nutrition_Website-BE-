@@ -30,6 +30,7 @@ app.use('/api/auth', authenticateToken, reportroutes);
 app.use('/api/auth', authenticateToken, settingroutes);
 app.use('/api/auth', authenticateToken, dashboardroutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.listen(port, hostname, () => {
-    console.log(`Server is running on http://0.0.0.0:${port}`);
-  });
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
