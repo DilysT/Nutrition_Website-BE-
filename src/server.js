@@ -9,7 +9,7 @@ const swaggerDocument = YAML.parse(file);
 const cors = require('cors'); // Import cors
 
 const port = process.env.PORT || 3000; // Default port is 3000
-const hostname = '0.0.0.o';
+const hostname = '0.0.0.0';
 
 const authroutes = require('./routes/auth.routes');
 const mymealroutes = require('./routes/mymeal.routes');
