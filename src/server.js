@@ -33,5 +33,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Example app listening at http://${hostname}:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
