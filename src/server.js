@@ -8,7 +8,8 @@ const file = fs.readFileSync(path.resolve('swagger_api_doc.yaml'), 'utf8');
 const swaggerDocument = YAML.parse(file);
 const cors = require('cors'); // Import cors
 
-const port = process.env.PORT || 3000; // Default port is 3000
+// Đọc cổng từ biến môi trường PORT (từ file .env nếu có) hoặc fallback về cổng 3000
+const port = process.env.PORT || 3000; // Nếu không có PORT trong môi trường thì dùng cổng 3000
 const hostname = '0.0.0.0';
 
 const authroutes = require('./routes/auth.routes');
@@ -31,6 +32,6 @@ app.use('/api/auth', authenticateToken, settingroutes);
 app.use('/api/auth', authenticateToken, dashboardroutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(port, hostname, () => {
+    console.log(`Server is running on http://${hostname}:${port}`);
 });
