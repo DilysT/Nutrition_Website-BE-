@@ -31,6 +31,6 @@ app.use('/api/auth', authenticateToken, settingroutes);
 app.use('/api/auth', authenticateToken, dashboardroutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.listen(process.env.PORT, '0.0.0.0', () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
